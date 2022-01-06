@@ -1,0 +1,52 @@
+<form class="row g-3" method="post" action="/admin/store">
+    <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">name</label>
+        <input type="text" class="form-control" id="inputEmail4" name="name">
+    </div>
+    
+    <div class="col-12">
+        <label for="inputAddress" class="form-label">Anh</label>
+        <input type="text" class="form-control" id="inputAddress" name="img">
+    </div>
+    <div>
+        {{!-- <div class="col-12">
+            <label for="inputAddress" class="form-label">loai</label>
+            <input type="text" class="form-control" id="inputAddress" name="loaihang">
+        </div> --}}
+        <div class="col-md-3">
+            <label for="validationDefault04" class="form-label">Loại</label>
+            <select class="form-select" aria-label="Default select example" name="loaihang">
+                {{#each loaihang}}
+                <option  value=" {{_id}}">{{ loai }}</option>
+                {{/each}}
+            </select>
+           
+        </div>
+    </div>
+    <div class="col-12">
+        <label for="inputAddress2" class="form-label">só lượng</label>
+        <input type="text" class="form-control" id="inputAddress2" name="soluong">
+    </div>
+  
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">creat</button>
+    </div>
+</form>
+
+
+
+<form class="row g-3" method="post" action="/creatLH">
+
+    <div>
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">loai</label>
+            <input type="text" class="form-control" id="inputAddress" name="loai">
+        </div>
+
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">creat</button>
+    </div>
+
+</form>

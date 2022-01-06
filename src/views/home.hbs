@@ -1,0 +1,62 @@
+
+<div class="row">
+    <div class="col-sm-3">
+            
+            <div>
+                <style type="text/css">
+                    #tests {
+                        border: 1px solid #b8e7b8;
+                        width: 300px;
+                        height: 400px;
+                        overflow-x: hidden;
+                        overflow-y: auto;
+                    }
+                </style>
+            
+                <div id="tests">
+                    {{#each data}}
+                   <p><a href=""><h4 id="item-1">{{ loaihang.loai}}</h4></a></p>
+                    {{/each}}
+                    
+                </div>
+            </div>
+    </div>
+    <div id="carouselExampleInterval"style=" width: 75%;" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="https://file.hstatic.net/200000182297/file/anh_bia_ao_dai_web_a38d8651e9cd4dc4acd9913fd5977e36.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="https://file.hstatic.net/200000182297/file/anh_bia_ao_dai_web_a38d8651e9cd4dc4acd9913fd5977e36.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://file.hstatic.net/200000182297/file/anh_bia_ao_dai_web_a38d8651e9cd4dc4acd9913fd5977e36.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+<hr style="margin-top: 80px;" >
+   
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+    {{#each data}}
+    <form method="get" action="/{{  _id }}/model" >
+  <div class="col">
+    <div class="card" style="text-align: center;">
+      <img src="{{ img }}" style="width: 15 rem; height: 250px; text-align: center;" class="card-img-top" alt="...">
+      <div class="card-body">
+        <button><h5 class="card-title">{{ this.name }}</h5></button>
+        <p class="card-text">300k</p>
+      </div>
+    </div>
+  </div>
+</form>
+    {{/each}}
+</div>
+</div>

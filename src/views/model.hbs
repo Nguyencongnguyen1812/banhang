@@ -1,0 +1,24 @@
+
+            <div class="modal-body">
+                <form class="row g-3" method="post" action="/admin/{{ mathang._id}}">
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">name</label>
+                        <input type="text" class="form-control" value="{{mathang.name}}" id="inputEmail4" name="name"/>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label">Anh</label>
+                        <input type="text" class="form-control" id="inputAddress" value="{{mathang.img}}" name="img"/>
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress2" class="form-label">só lượng</label>
+                        <input type="text" class="form-control" id="inputAddress2" value="{{mathang.soluong }}"
+                            name="soluong"/>
+                    </div>
+                   
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">sửa</button>
+                    </div>
+                </form>
+            </div>
+            

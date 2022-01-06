@@ -1,0 +1,137 @@
+<div class="row">
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">HOME</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+            aria-expanded="false">Quản Lý</a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link disabled">Disabled</a>
+    </li>
+</ul>
+<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+        <svg class="bi me-2" width="30" height="24">
+            <use xlink:href="#bootstrap"></use>
+        </svg>
+        <span class="fs-5 fw-semibold">HOME</span>
+    </a>
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Quản Lý
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample">
+        <ul class="list-group " style="margin-left: 10%; border: none !important">
+            <li  class="list-group-item"  style="border: none !important"><a href="/admin/Qlmathang">Quản Lý Mặt Hàng</a></li>
+            <li class="list-group-item" style="border: none !important"><a href="/admin/Qlloaihang">Quản Lý Loai Hang</a></li>
+            <li class="list-group-item" style="border: none !important">A third item</li>
+            <li class="list-group-item" style="border: none !important">A fourth item</li>
+            <li class="list-group-item" style="border: none !important">And a fifth one</li>
+        </ul>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Người Dùng
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                data-bs-parent="#accordionFlushExample">
+            <ul class="list-group " style="margin-left: 10%; border: none !important">
+                <li class="list-group-item" style="border: none !important">Quản Lý Khách Hàng</li>
+                <li class="list-group-item" style="border: none !important">Quản lý nhân viên</li>
+                
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Đặt hàng
+                </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                data-bs-parent="#accordionFlushExample">
+            <ul class="list-group " style="margin-left: 10%; border: none !important">
+                <li class="list-group-item" style="border: none !important">Quản Lý Đơn Hàng</li>
+                <li class="list-group-item" style="border: none !important">Quản lý nhân viên</li>
+                
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-9">
+    <form action="/admin/creat"><button class="btn btn-primary">Thêm Sản Phẩm</button></form>
+    
+<table class=" table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+            <th scope="col">sửa</th>
+            <th scope="col">xóa</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {{#each mathang}}
+            <tr>
+                <th scope="row"></th>
+                <td><div class="card" style="width: 5rem;">
+                    <img src={{this.img}} class="card-img-top" alt="...">
+                    <div class="card-body"></td>
+                <td>{{ this.name }}</td>
+                <td>{{ loaihang.loai }}</td>
+                <td>{{ this.soluong }}</td>
+                <td><form method="post" action="/admin/{{  _id }}/delete"><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">xóa</button></form></td>
+                <td>
+                    <form method="get" action="/admin/{{  _id }}/model"><button class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">sua</button></form>
+                </td>
+                
+            </tr>
+        
+        {{/each}}
+        {{#each loaihang}}
+        <tr>
+            <th scope="row"></th>
+            <td>{{ loai }}</td>
+            
+            <td>
+                <form method="post" action="/admin/{{ _id}}/deleteLH"><button class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">xóa</button></form>
+            </td>
+        
+        </tr>
+        
+        {{/each}}
+    </tbody>
+</table>
+</div>
+
+</div>
