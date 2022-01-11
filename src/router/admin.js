@@ -3,6 +3,7 @@ const router = express.Router();
 
 const admin = require('../../app/controller/AdminControllor')
 const user = require('../../app/controller/userController')
+const oder = require('../../app/controller/oderController')
 router.get('/creat', admin.creat)
 router.post('/store', admin.store)
 router.post('/:id/delete', admin.delete)
@@ -13,6 +14,7 @@ router.get('/QLloaihang', admin.Qlloaihang)
 router.post('/:id/deleteLH', admin.deleteLH)
 router.post('/creatLH', admin.creatLH)
 router.get('/QLnhansu', user.Qlnhansu)
+router.get('/QLgiohang', oder.Qlgiohang)
 router.get('/', admin.index);
 
 

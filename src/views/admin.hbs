@@ -1,5 +1,6 @@
 <div class="row">
-<ul class="nav nav-pills">
+
+ <ul class="nav nav-pills">
     <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="#">HOME</a>
     </li>
@@ -41,7 +42,7 @@
             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
                 data-bs-parent="#accordionFlushExample">
         <ul class="list-group " style="margin-left: 10%; border: none !important">
-            <li  class="list-group-item"  style="border: none !important"><a href="/admin/Qlmathang">Quản Lý Mặt Hàng</a></li>
+            <li  class="list-group-item"  style="border: none !important"><a class="cative" href="/admin/Qlmathang">Quản Lý Mặt Hàng</a></li>
             <li class="list-group-item" style="border: none !important"><a href="/admin/Qlloaihang">Quản Lý Loai Hang</a></li>
             <li class="list-group-item" style="border: none !important">A third item</li>
             <li class="list-group-item" style="border: none !important">A fourth item</li>
@@ -60,7 +61,7 @@
                 data-bs-parent="#accordionFlushExample">
             <ul class="list-group " style="margin-left: 10%; border: none !important">
                 <li class="list-group-item" style="border: none !important">Quản Lý Khách Hàng</li>
-                <li class="list-group-item" style="border: none !important">Quản lý nhân viên</li>
+                <li class="list-group-item" style="border: none !important"><a href="/admin/Qlnhansu">Quản lý nhân viên</a></li>
                 
             </div>
         </div>
@@ -74,8 +75,8 @@
             <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
                 data-bs-parent="#accordionFlushExample">
             <ul class="list-group " style="margin-left: 10%; border: none !important">
-                <li class="list-group-item" style="border: none !important">Quản Lý Đơn Hàng</li>
-                <li class="list-group-item" style="border: none !important">Quản lý nhân viên</li>
+                <li class="list-group-item" style="border: none !important"> <a href="/admin/Qlgiohang">Quản Lý Giỏ Hàng</a></li>
+                <li class="list-group-item" style="border: none !important">  <a href="/admin/Qldonhang">Quản Lý Đơn Hàng</a></li>
                 
             </ul>
             </div>
@@ -126,6 +127,17 @@
                 <form method="post" action="/admin/{{ _id}}/deleteLH"><button class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#exampleModal">xóa</button></form>
             </td>
+        
+        </tr>
+        
+        {{/each}}
+        {{#each data}}
+        <tr>
+            <th scope="row"></th>
+            <td>{{ name }}  {{ id_mathang.name }}</td>
+            <td>{{ _id }}</td>
+            
+            
         
         </tr>
         

@@ -1,23 +1,22 @@
 <div class="mx-auto p-1  " style="width: 500px; top: 100px;">
-<form>
+<form method="post" action="/login">
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="email" class="form-control" id="exampleInputEmail1" name="email">
     </div>
     <div class="mb-10">
         <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+        <input type="password" class="form-control" id="exampleInputPassword1" name="password">
     </div>
-    <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <button type="submit" onclick="login" class="btn btn-primary">Đăng nhập</button>
 </form>
 </div>
-{{#each loaihang}}
-
-{{ loai }}
 
 
-{{/each}}
+
+<script type="text/javascript">
+function login() {
+   console.log(token)
+}
+</script>

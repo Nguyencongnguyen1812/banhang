@@ -18,7 +18,7 @@ class admin {
     }
      creatLH(req, res, next) {
         res.json( req.body )
-        console.log(req.body )
+
         // console.log(req.params)
         // const Loaihang = new loaihang(req.body)
         // Loaihang.save()
@@ -36,13 +36,16 @@ class admin {
             .catch(next)
     }
     store(req, res, next) {
-        
+       
         const data = req.body;
         data.loaihang = req.body.loaihang;
+        
         if (!mongoose.Types.ObjectId.isValid(data.loaihang)) {
-            data.loaihang = data.loaihang.replace('');
+            data.loaihang = data.loaihang.replace(/\s/g, '');
+            
         }
         const Mathang = new mathang(data)
+        //console.log(data)
         // console.log(req.body)
         // res.json(req.body)
         Mathang.save()
