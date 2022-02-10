@@ -1,0 +1,25 @@
+
+{{#each data}}
+
+<div style="color:bisque;" class="input-group mb-3 ">
+    {{!-- <div class="page-hero d-flex align-items-center justify-content-center input-group-prepend">
+        <div class="input-group-text">
+            <input style="height: 20px;  width: 20px;" type="checkbox" aria-label="Checkbox for following text input">
+        </div>
+    </div> --}}
+    <form method="post" action="/{{ _id }}/dathang"> <button class="btn btn-primary">mua hang</button></form>
+<ul class="list-unstyled">
+    <li class="media">
+        <tr>
+            <th scope="col"><img style="height: 100px;     width: 100px;" class="mr-3" src={{ id_mathang.img }} alt="Generic placeholder image"></th>
+            <th scope="col">{{ _id }}</th>
+            <th scope="col">{{ id_mathang.name }}</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </li>
+</ul>
+
+</div>
+{{/each}}
+
+

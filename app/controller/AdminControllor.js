@@ -3,6 +3,7 @@ const loaihang = require('../models/loaihang')
 const giohang = require('../models/giohang')
 const { monggoosetoObiect } = require('./mongoose')
 const mongoose = require('mongoose')
+const donhang = require('../models/donhang')
 class admin {
     index(req, res, next) {
             mathang.find({})
@@ -10,6 +11,7 @@ class admin {
                 .then(mathang => {
                     mathang = mathang.map(mathang => mathang.toObject())
                     res.render('admin', { mathang })
+                    
 
                 })
                 .catch(next)
@@ -92,20 +94,31 @@ class admin {
                 () => res.redirect('back')
             ).catch(next)
     }
-    // creatLH(req, res, next) {
+    donhang(req, res, next){
         
-    //     const Loaihang = new loaihang({ loai: req.params})
-    //     console.log(req.params)
-    //     res.json(req.body)
-    //     // Loaihang.save()
-    //     //     .then(
-    //     //         () => res.redirect('back')
-    //     //     ).catch(next)
-    // }
-   
+        donhang.find({})  
+            .populate('id_gio')
+            .populate({
+                path: 'id_gio',
+                populate: { path: 'id_use' }
 
+                }
+            )
+            .populate({
+                path: 'id_gio',
+                populate: { path: 'id_mathang' }
 
+            }
+            )
 
+            .then(data1 => {
+                data1 = data1.map(data1 => data1.toObject())
+                res.render('admin', { data1 })
+                
+            })       
+        .catch(next)
+    }
+    
 }
 
 module.exports = new admin;

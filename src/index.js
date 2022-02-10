@@ -5,6 +5,9 @@ const path = require('path')
 const { engine } = require('express-handlebars');
 const route = require("./router");
 const db = require('../config/db')
+var cookieParser = require('cookie-parser')
+
+app.use(cookieParser())
 
 db.connect()
 

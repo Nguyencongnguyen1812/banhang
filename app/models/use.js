@@ -9,6 +9,7 @@ const Use = new mongoose.Schema(
         quequan: 'string',
         chucvu: 'string',
         ngaysinh: 'date',
+        role: 'string'
     },
     {
         timestamps: true
